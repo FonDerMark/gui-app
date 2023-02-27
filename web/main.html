@@ -14,13 +14,21 @@
   <input id="text-input" type="text" class="form-control" placeholder="Поле для ввода" aria-label="Recipient's username" aria-describedby="button-addon2">
   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Отправить</button>
 </div>
-<textarea id="text-area" disabled>
+<div>
+    <ul id="news-list">
 
-</textarea>
+    </ul>
+</div>
 <script type="text/javascript">
     async function main() {
-        let text = document.getElementById('text-input').value;
-        document.getElementById('text-area').value = await eel.test(text)();
+        let obj = JSON.parse(await eel.test()())
+        let newslist = document.getElementById('news-list')
+        for (let i = 0; i < 9; i++) {
+            let Card = document.createElement('div')
+            Card.innerHTML('123')
+            newslist.append(Card)
+        }
+        document.getElementById('text-area').innerHTML = obj.date;
     }
     document.getElementById('button-addon2').onclick = main;
 </script>

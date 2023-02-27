@@ -1,3 +1,4 @@
+import json
 import eel
 from parse import news_finder
 
@@ -6,8 +7,8 @@ eel.init('web')
 
 
 @eel.expose
-def test() -> dict:
-    return news_finder()
+def test() -> json:
+    return json.dumps(news_finder(), ensure_ascii=False)
 
 
-eel.start('main.html', size=(400, 400))
+eel.start('main.html', size=(600, 600))
