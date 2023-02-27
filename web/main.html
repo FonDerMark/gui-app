@@ -21,14 +21,14 @@
 </div>
 <script type="text/javascript">
     async function main() {
-        let obj = JSON.parse(await eel.test()())
+        // let obj = JSON.parse(await eel.test()())
         let newslist = document.getElementById('news-list')
         for (let i = 0; i < 9; i++) {
             let Card = document.createElement('div')
             Card.innerHTML('123')
             newslist.append(Card)
         }
-        document.getElementById('text-area').innerHTML = obj.date;
+        // document.getElementById('text-area').innerHTML = obj.date;
     }
     document.getElementById('button-addon2').onclick = main;
 </script>
